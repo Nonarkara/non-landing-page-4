@@ -6,6 +6,9 @@
 !styles.css
 !script.js
 !.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/static.yml
 
 # Include only the specific photos used by the site
 !Portrait photos/
