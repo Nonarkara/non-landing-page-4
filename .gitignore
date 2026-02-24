@@ -11,18 +11,35 @@
 !.github/workflows/static.yml
 
 # Include only the specific photos used by the site
+
 !Portrait photos/
 Portrait photos/*
 !Portrait photos/IMG_0786.JPG
+!Portrait photos/IMG_7460.JPG
 
 !Fieldwork in Shanghai 2013 - 2015/
 Fieldwork in Shanghai 2013 - 2015/*
 !Fieldwork in Shanghai 2013 - 2015/Fieldwork in Shanghai 2013 - 2015(10).jpg
+!Fieldwork in Shanghai 2013 - 2015/Fieldwork in Shanghai 2013 - 2015(1).jpg
+!Fieldwork in Shanghai 2013 - 2015/Fieldwork in Shanghai 2013 - 2015(5).jpg
+!Fieldwork in Shanghai 2013 - 2015/Fieldwork in Shanghai 2013 - 2015(15).jpg
 
 !Lecture photos/
 Lecture photos/*
 !Lecture photos/DAY1_0368.jpg
+!Lecture photos/DAY1_0317.jpg
 
 !Designated Survivor/
 Designated Survivor/*
 !Designated Survivor/ChatGPT Image Feb 23, 2026, 12_09_50 AM.png
+
+!Awards photos/
+Awards photos/*
+!Awards photos/8T9A2486-opq3225169366.jpg
+!Awards photos/JSCF2025-2529.jpg
+!Awards photos/8T9A2750-opq3225166299.jpg
+
+!SLIC/
+SLIC/*
+!SLIC/SCTCDP dashboard.png
+!SLIC/Z03A3528-opq3946524017.jpg
