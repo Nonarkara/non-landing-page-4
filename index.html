@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NON</title>
+  <meta name="description" content="Non Arkaraprasertkul — city systems designer, anthropologist, novelist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500&family=Noto+Sans+Thai:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══ TOPBAR ═══ -->
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Home">N</a>
+    <div class="lang-switch" role="tablist" aria-label="Language">
+      <button class="lang-btn active" role="tab" aria-selected="true" data-lang="en">EN</button>
+      <button class="lang-btn" role="tab" aria-selected="false" data-lang="th">TH</button>
+      <button class="lang-btn" role="tab" aria-selected="false" data-lang="zh">中文</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <h1 class="hero-name" aria-label="NON">NON</h1>
+      <p class="hero-tagline" data-i18n="heroTagline"></p>
+      <div class="hero-names">
+        <span>NON ARKARAPRASERTKUL</span>
+        <span class="sep">/</span>
+        <span>นน อัครประเสริฐกุล</span>
+        <span class="sep">/</span>
+        <span>农·阿卡拉帕萨特库</span>
+      </div>
+    </section>
+
+    <!-- ═══ FULL-BLEED PORTRAIT ═══ -->
+    <figure class="bleed-photo">
+      <img data-media="hero_main" alt="Portrait of Non" fetchpriority="high">
+    </figure>
+
+    <!-- ═══ NON-FICTION ═══ -->
+    <section class="story">
+      <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s1word"></span></h2>
+      <div class="story-text">
+        <p data-i18n="s1p1"></p>
+        <p data-i18n="s1p2"></p>
+      </div>
+    </section>
+
+    <!-- ═══ FULL-BLEED FIELDWORK ═══ -->
+    <figure class="bleed-photo">
+      <img data-media="fieldwork" alt="Fieldwork in Shanghai" loading="lazy">
+    </figure>
+
+    <!-- ═══ NON-STOP ═══ -->
+    <section class="story">
+      <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s2word"></span></h2>
+      <div class="story-text">
+        <p data-i18n="s2p1"></p>
+        <p data-i18n="s2p2"></p>
+      </div>
+    </section>
+
+    <!-- ═══ FULL-BLEED STAGE ═══ -->
+    <figure class="bleed-photo">
+      <img data-media="work_main" alt="Non on stage" loading="lazy">
+    </figure>
+
+    <!-- ═══ NON-SENSE? ═══ -->
+    <section class="story">
+      <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s3word"></span></h2>
+      <div class="story-text">
+        <p data-i18n="s3p1"></p>
+        <p data-i18n="s3p2"></p>
+        <div class="story-links">
+          <a href="https://nonarkara.substack.com/p/designated-survivor-bangkok" target="_blank" rel="noopener noreferrer" data-i18n="s3link1"></a>
+          <a href="https://nonharvard.wordpress.com" target="_blank" rel="noopener noreferrer" data-i18n="s3link2"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FULL-BLEED NOVEL ═══ -->
+    <figure class="bleed-photo">
+      <img data-media="writing" alt="Designated Survivor" loading="lazy">
+    </figure>
+
+    <!-- ═══ NON-PROPRIETARY ═══ -->
+    <section class="story">
+      <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s4word"></span></h2>
+      <p class="story-intro" data-i18n="s4intro"></p>
+      <div id="steal-list" class="steal-list"></div>
+    </section>
+
+    <!-- ═══ NON-HIDING ═══ -->
+    <section class="story last">
+      <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s5word"></span></h2>
+      <p class="story-intro" data-i18n="s5intro"></p>
+      <div class="find-links">
+        <a href="mailto:non.ar@depa.or.th">non.ar@depa.or.th</a>
+        <a href="mailto:non@alum.mit.edu">non@alum.mit.edu</a>
+        <a href="https://www.linkedin.com/in/drnon" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.researchgate.net/profile/Non-Arkaraprasertkul" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a href="https://independent.academia.edu/NonArkaraprasertkul" target="_blank" rel="noopener noreferrer">Academia.edu</a>
+        <a href="https://nonarkara.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+        <a href="https://nonharvard.wordpress.com" target="_blank" rel="noopener noreferrer">nonharvard</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer"></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

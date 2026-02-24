@@ -1,0 +1,25 @@
+# Exclude everything by default
+*
+
+# Include web files
+!index.html
+!styles.css
+!script.js
+!.gitignore
+
+# Include only the specific photos used by the site
+!Portrait photos/
+Portrait photos/*
+!Portrait photos/IMG_0786.JPG
+
+!Fieldwork in Shanghai 2013 - 2015/
+Fieldwork in Shanghai 2013 - 2015/*
+!Fieldwork in Shanghai 2013 - 2015/Fieldwork in Shanghai 2013 - 2015(10).jpg
+
+!Lecture photos/
+Lecture photos/*
+!Lecture photos/DAY1_0368.jpg
+
+!Designated Survivor/
+Designated Survivor/*
+!Designated Survivor/ChatGPT Image Feb 23, 2026, 12_09_50 AM.png

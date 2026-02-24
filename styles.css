@@ -1,0 +1,450 @@
+/* ══════════════════════════════════════════
+   NON — Editorial Minimalism
+   ══════════════════════════════════════════ */
+
+:root {
+  --bg: #fff;
+  --ink: #0a0a0a;
+  --ink-soft: #3a3a3a;
+  --muted: #999;
+  --accent: #E8410C;
+  --col: min(680px, 88vw);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  font-family: "Inter", "Noto Sans Thai", "Noto Sans SC", sans-serif;
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ══════════════════════════════════
+   TOPBAR — whisper-quiet
+   ══════════════════════════════════ */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem max(1.5rem, calc((100vw - var(--col)) / 2));
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.55rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.15s, background 0.15s;
+}
+
+.lang-btn.active {
+  color: var(--ink);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--ink-soft);
+}
+
+/* ══════════════════════════════════
+   HERO — the name IS the design
+   ══════════════════════════════════ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.hero-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(8rem, 28vw, 24rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  user-select: none;
+}
+
+.hero-tagline {
+  margin-top: 2rem;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 300;
+  color: var(--ink-soft);
+  max-width: 36ch;
+  line-height: 1.5;
+}
+
+.hero-names {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.hero-names .sep {
+  color: var(--muted);
+  opacity: 0.4;
+}
+
+/* ══════════════════════════════════
+   FULL-BLEED PHOTOS
+   ══════════════════════════════════ */
+
+.bleed-photo {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: clamp(40vh, 60vw, 80vh);
+  overflow: hidden;
+}
+
+.bleed-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Portrait photo needs face positioning */
+.bleed-photo:first-of-type img {
+  object-position: center 20%;
+}
+
+/* ══════════════════════════════════
+   STORY BLOCKS — flowing narrative
+   ══════════════════════════════════ */
+
+.story {
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.story.last {
+  padding-bottom: 4rem;
+}
+
+.non-word {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+}
+
+.non-prefix {
+  color: var(--accent);
+}
+
+.story-text p {
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  color: var(--ink-soft);
+  line-height: 1.8;
+  max-width: 60ch;
+}
+
+.story-text p + p {
+  margin-top: 1.2rem;
+}
+
+.story-intro {
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  color: var(--ink-soft);
+  line-height: 1.8;
+  max-width: 60ch;
+  margin-bottom: 2rem;
+}
+
+/* ══════════════════════════════════
+   STORY LINKS (Writing section)
+   ══════════════════════════════════ */
+
+.story-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.story-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.story-links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════
+   STEAL MY IDEA — minimal accordion
+   ══════════════════════════════════ */
+
+.steal-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.steal-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.steal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.1rem 0;
+  background: none;
+  border: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.steal-head:hover {
+  color: var(--accent);
+}
+
+.steal-head::after {
+  content: "+";
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--muted);
+  transition: transform 0.3s var(--ease);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.steal-item.open .steal-head::after {
+  transform: rotate(45deg);
+  color: var(--accent);
+}
+
+.steal-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+
+.steal-item.open .steal-body {
+  max-height: 600px;
+}
+
+.steal-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding-bottom: 0.5rem;
+}
+
+.steal-json-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.steal-json-wrap pre {
+  margin: 0;
+  padding: 1rem 1.2rem;
+  background: #f6f6f4;
+  border-radius: 4px;
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  color: var(--ink-soft);
+}
+
+.steal-copy-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.steal-copy-btn:hover {
+  background: var(--accent);
+}
+
+.steal-copy-btn.copied {
+  background: #059669;
+}
+
+/* ══════════════════════════════════
+   FIND LINKS (Contact)
+   ══════════════════════════════════ */
+
+.find-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.find-links a {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: color 0.15s, padding-left 0.2s var(--ease);
+}
+
+.find-links a:hover {
+  color: var(--accent);
+  padding-left: 0.5rem;
+}
+
+.find-links a:last-child {
+  border-bottom: none;
+}
+
+/* ══════════════════════════════════
+   FOOTER
+   ══════════════════════════════════ */
+
+.site-footer {
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-footer p {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════
+   SCROLL REVEAL
+   ══════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════ */
+
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: clamp(5rem, 22vw, 10rem);
+  }
+
+  .hero {
+    padding: 5rem 1rem 3rem;
+  }
+
+  .story {
+    padding: 4rem 1rem;
+  }
+
+  .non-word {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  .bleed-photo {
+    height: clamp(30vh, 50vw, 50vh);
+  }
+
+  .hero-names {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .hero-names .sep {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bleed-photo {
+    height: 70vh;
+  }
+}
