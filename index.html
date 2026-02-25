@@ -7,10 +7,21 @@
   <meta name="description" content="Non Arkaraprasertkul — city systems designer, anthropologist, novelist.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500&family=Noto+Sans+Thai:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+Thai:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- ═══ INTRO OVERLAY ═══ -->
+  <div class="intro" aria-hidden="true">
+    <span class="intro__text">NON</span>
+  </div>
+
+  <!-- ═══ FILM GRAIN ═══ -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ═══ CUSTOM CURSOR ═══ -->
+  <div class="cursor" aria-hidden="true"></div>
 
   <!-- ═══ TOPBAR ═══ -->
   <header class="topbar">
@@ -26,7 +37,9 @@
 
     <!-- ═══ HERO ═══ -->
     <section class="hero">
-      <h1 class="hero-name" aria-label="NON">NON</h1>
+      <h1 class="hero-name" aria-label="NON">
+        <span class="hero-letter">N</span><span class="hero-letter">O</span><span class="hero-letter">N</span>
+      </h1>
       <p class="hero-tagline" data-i18n="heroTagline"></p>
       <div class="hero-names">
         <span>NON ARKARAPRASERTKUL</span>
@@ -36,6 +49,28 @@
         <span>农·阿卡拉帕萨特库</span>
       </div>
     </section>
+
+    <!-- ═══ MARQUEE 1 ═══ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>CITY SYSTEMS</span><span class="dot">●</span>
+        <span>ANTHROPOLOGY</span><span class="dot">●</span>
+        <span>FICTION</span><span class="dot">●</span>
+        <span>SMART CITIES</span><span class="dot">●</span>
+        <span>ASEAN</span><span class="dot">●</span>
+        <span>DESIGN THINKING</span><span class="dot">●</span>
+        <span>CRISIS OPS</span><span class="dot">●</span>
+        <span>POLICY DESIGN</span><span class="dot">●</span>
+        <span>CITY SYSTEMS</span><span class="dot">●</span>
+        <span>ANTHROPOLOGY</span><span class="dot">●</span>
+        <span>FICTION</span><span class="dot">●</span>
+        <span>SMART CITIES</span><span class="dot">●</span>
+        <span>ASEAN</span><span class="dot">●</span>
+        <span>DESIGN THINKING</span><span class="dot">●</span>
+        <span>CRISIS OPS</span><span class="dot">●</span>
+        <span>POLICY DESIGN</span><span class="dot">●</span>
+      </div>
+    </div>
 
     <!-- ═══ FULL-BLEED PORTRAIT ═══ -->
     <figure class="bleed-photo">
@@ -48,41 +83,37 @@
       <div class="story-text">
         <p data-i18n="s1p1"></p>
       </div>
-
-      <!-- Journey timeline -->
       <div class="journey">
         <div class="journey-line">
-          <div class="journey-dot"><span>Bangkok</span></div>
-          <div class="journey-dot"><span>Cambridge</span></div>
-          <div class="journey-dot"><span>Oxford</span></div>
-          <div class="journey-dot"><span>Shanghai</span></div>
-          <div class="journey-dot"><span data-i18n="journeyAsean"></span></div>
+          <div class="journey-dot stagger"><span>Bangkok</span></div>
+          <div class="journey-dot stagger"><span>Cambridge</span></div>
+          <div class="journey-dot stagger"><span>Oxford</span></div>
+          <div class="journey-dot stagger"><span>Shanghai</span></div>
+          <div class="journey-dot stagger"><span data-i18n="journeyAsean"></span></div>
         </div>
       </div>
-
-      <!-- Career chapters -->
       <div class="chapters">
-        <div class="chapter">
+        <div class="chapter stagger">
           <div class="ch-meta"><span class="ch-num">01</span><span class="ch-date">2004 – 2010</span></div>
           <h3 data-i18n="ch1title"></h3>
           <p data-i18n="ch1body"></p>
         </div>
-        <div class="chapter">
+        <div class="chapter stagger">
           <div class="ch-meta"><span class="ch-num">02</span><span class="ch-date">2010 – 2016</span></div>
           <h3 data-i18n="ch2title"></h3>
           <p data-i18n="ch2body"></p>
         </div>
-        <div class="chapter">
+        <div class="chapter stagger">
           <div class="ch-meta"><span class="ch-num">03</span><span class="ch-date">2016 – 2019</span></div>
           <h3 data-i18n="ch3title"></h3>
           <p data-i18n="ch3body"></p>
         </div>
-        <div class="chapter">
+        <div class="chapter stagger">
           <div class="ch-meta"><span class="ch-num">04</span><span class="ch-date">2019 – Present</span></div>
           <h3 data-i18n="ch4title"></h3>
           <p data-i18n="ch4body"></p>
         </div>
-        <div class="chapter">
+        <div class="chapter stagger">
           <div class="ch-meta"><span class="ch-num">05</span><span class="ch-date">2025 – Now</span></div>
           <h3 data-i18n="ch5title"></h3>
           <p data-i18n="ch5body"></p>
@@ -95,15 +126,13 @@
       <img data-media="fieldwork" alt="Fieldwork in Shanghai" loading="lazy">
     </figure>
 
-    <!-- ═══ NON-STOP: Work + SCTHCDP + ASEAN CSCO ═══ -->
-    <section class="story">
+    <!-- ═══ NON-STOP (DARK SECTION) ═══ -->
+    <section class="story dark">
       <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s2word"></span></h2>
       <div class="story-text">
         <p data-i18n="s2p1"></p>
       </div>
-
-      <!-- SCTHCDP -->
-      <div class="platform-block">
+      <div class="platform-block stagger">
         <h3 data-i18n="scthcdpTitle"></h3>
         <p data-i18n="scthcdpDesc"></p>
         <ol class="platform-features">
@@ -117,17 +146,15 @@
           <figcaption data-i18n="scthcdpCaption"></figcaption>
         </figure>
       </div>
-
-      <!-- ASEAN CSCO -->
-      <div class="case-block">
+      <div class="case-block stagger">
         <span class="case-kicker" data-i18n="cscoKicker"></span>
         <h3 data-i18n="cscoTitle"></h3>
         <p data-i18n="cscoDesc"></p>
         <div class="metrics-grid">
-          <div class="metric"><span class="metric-val">112,000+</span><span class="metric-label" data-i18n="cscoM1"></span></div>
-          <div class="metric"><span class="metric-val">&lt;48h</span><span class="metric-label" data-i18n="cscoM2"></span></div>
-          <div class="metric"><span class="metric-val">10h</span><span class="metric-label" data-i18n="cscoM3"></span></div>
-          <div class="metric"><span class="metric-val">38,000</span><span class="metric-label" data-i18n="cscoM4"></span></div>
+          <div class="metric stagger"><span class="metric-val" data-count="112000">0</span><span class="metric-suffix">+</span><span class="metric-label" data-i18n="cscoM1"></span></div>
+          <div class="metric stagger"><span class="metric-val">&lt;48h</span><span class="metric-label" data-i18n="cscoM2"></span></div>
+          <div class="metric stagger"><span class="metric-val" data-count="10">0</span><span class="metric-suffix">h</span><span class="metric-label" data-i18n="cscoM3"></span></div>
+          <div class="metric stagger"><span class="metric-val" data-count="38000">0</span><span class="metric-suffix">+</span><span class="metric-label" data-i18n="cscoM4"></span></div>
         </div>
       </div>
     </section>
@@ -141,29 +168,26 @@
     <section class="story">
       <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s6word"></span></h2>
       <p class="story-intro" data-i18n="s6intro"></p>
-
       <div class="research-threads">
-        <div class="thread">
+        <div class="thread stagger">
           <div class="ch-meta"><span class="ch-num">01</span></div>
           <h3 data-i18n="r1title"></h3>
           <p data-i18n="r1desc"></p>
           <div class="pub-links" id="pubs-thread-1"></div>
         </div>
-        <div class="thread">
+        <div class="thread stagger">
           <div class="ch-meta"><span class="ch-num">02</span></div>
           <h3 data-i18n="r2title"></h3>
           <p data-i18n="r2desc"></p>
           <div class="pub-links" id="pubs-thread-2"></div>
         </div>
-        <div class="thread">
+        <div class="thread stagger">
           <div class="ch-meta"><span class="ch-num">03</span></div>
           <h3 data-i18n="r3title"></h3>
           <p data-i18n="r3desc"></p>
           <div class="pub-links" id="pubs-thread-3"></div>
         </div>
       </div>
-
-      <!-- Fieldwork gallery -->
       <div class="gallery-scroll">
         <img data-media="gallery_a" alt="Shanghai fieldwork" loading="lazy">
         <img data-media="gallery_b" alt="Shanghai fieldwork" loading="lazy">
@@ -189,6 +213,28 @@
       <img data-media="writing" alt="Designated Survivor" loading="lazy">
     </figure>
 
+    <!-- ═══ MARQUEE 2 (REVERSE) ═══ -->
+    <div class="marquee marquee--rev" aria-hidden="true">
+      <div class="marquee__track">
+        <span>HARVARD</span><span class="dot">●</span>
+        <span>OXFORD</span><span class="dot">●</span>
+        <span>MIT</span><span class="dot">●</span>
+        <span>FULBRIGHT</span><span class="dot">●</span>
+        <span>DEPA</span><span class="dot">●</span>
+        <span>SLIC</span><span class="dot">●</span>
+        <span>KMITL</span><span class="dot">●</span>
+        <span>ASEAN</span><span class="dot">●</span>
+        <span>HARVARD</span><span class="dot">●</span>
+        <span>OXFORD</span><span class="dot">●</span>
+        <span>MIT</span><span class="dot">●</span>
+        <span>FULBRIGHT</span><span class="dot">●</span>
+        <span>DEPA</span><span class="dot">●</span>
+        <span>SLIC</span><span class="dot">●</span>
+        <span>KMITL</span><span class="dot">●</span>
+        <span>ASEAN</span><span class="dot">●</span>
+      </div>
+    </div>
+
     <!-- ═══ NON-PROPRIETARY ═══ -->
     <section class="story">
       <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s4word"></span></h2>
@@ -196,7 +242,7 @@
       <div id="steal-list" class="steal-list"></div>
     </section>
 
-    <!-- ═══ Proof photo grid ═══ -->
+    <!-- ═══ NON-NEGOTIABLE ═══ -->
     <section class="story">
       <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="proofWord"></span></h2>
       <p class="story-intro" data-i18n="proofIntro"></p>
@@ -211,9 +257,8 @@
 
     <!-- ═══ NON-HIDING ═══ -->
     <section class="story last">
-      <h2 class="non-word"><span class="non-prefix">NON-</span><span data-i18n="s5word"></span></h2>
+      <h2 class="non-word"><span class="non-prefix">NON-</span><em><span data-i18n="s5word"></span></em></h2>
       <p class="story-intro" data-i18n="s5intro"></p>
-
       <div class="contact-split">
         <div class="contact-col">
           <h3 data-i18n="contactDirect"></h3>

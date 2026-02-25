@@ -596,7 +596,7 @@ function setupLanguage() {
 }
 
 /* ══════════════════════════════════
-   SCROLL REVEAL
+   SCROLL REVEAL + STAGGER
    ══════════════════════════════════ */
 
 function setupReveal() {
@@ -610,10 +610,102 @@ function setupReveal() {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("is-visible");
+      // Trigger counters inside this section
+      entry.target.querySelectorAll("[data-count]").forEach(animateCounter);
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
   nodes.forEach(n => observer.observe(n));
+}
+
+/* ══════════════════════════════════
+   COUNTER ANIMATION
+   ══════════════════════════════════ */
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count, 10);
+  if (!target || el._counted) return;
+  el._counted = true;
+  const duration = 2000;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target.toLocaleString();
+  }
+
+  requestAnimationFrame(update);
+}
+
+/* ══════════════════════════════════
+   CUSTOM CURSOR
+   ══════════════════════════════════ */
+
+function setupCursor() {
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+  const el = document.querySelector(".cursor");
+  if (!el) return;
+
+  let mx = 0, my = 0, cx = 0, cy = 0;
+
+  document.addEventListener("mousemove", e => {
+    mx = e.clientX;
+    my = e.clientY;
+    el.classList.add("visible");
+  });
+
+  document.addEventListener("mouseleave", () => el.classList.remove("visible"));
+
+  (function tick() {
+    cx += (mx - cx) * 0.14;
+    cy += (my - cy) * 0.14;
+    el.style.transform = `translate(${cx - 9}px, ${cy - 9}px)`;
+    requestAnimationFrame(tick);
+  })();
+
+  document.querySelectorAll("a, button, .steal-head").forEach(t => {
+    t.addEventListener("mouseenter", () => el.classList.add("hover"));
+    t.addEventListener("mouseleave", () => el.classList.remove("hover"));
+  });
+}
+
+/* ══════════════════════════════════
+   DARK TOPBAR
+   ══════════════════════════════════ */
+
+function setupDarkTopbar() {
+  const topbar = document.querySelector(".topbar");
+  const darkSections = document.querySelectorAll(".dark");
+  if (!topbar || !darkSections.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    let anyDark = false;
+    darkSections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top < 60 && rect.bottom > 60) anyDark = true;
+    });
+    topbar.classList.toggle("topbar--dark", anyDark);
+  }, { threshold: 0, rootMargin: "-59px 0px -100% 0px" });
+
+  // Use scroll instead for more reliable detection
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      let anyDark = false;
+      darkSections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < 60 && rect.bottom > 60) anyDark = true;
+      });
+      topbar.classList.toggle("topbar--dark", anyDark);
+      ticking = false;
+    });
+  }, { passive: true });
 }
 
 /* ══════════════════════════════════
@@ -625,6 +717,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLanguage();
   const savedLang = localStorage.getItem("nonLandingLang") || "en";
   setLanguage(savedLang);
+
+  // Mark all story and photo sections as reveal targets
   document.querySelectorAll(".story, .bleed-photo").forEach(el => el.classList.add("reveal"));
   setupReveal();
+
+  // Wild features
+  setupCursor();
+  setupDarkTopbar();
 });
